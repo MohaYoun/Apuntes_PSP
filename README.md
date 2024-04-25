@@ -3,7 +3,8 @@ Cosas interesantes y fallos cometidos.
 
 ### Ejercicio 1 de pract Junio
 1. Fallos Cometidos.
-   1.1 Leer el pipe de escritura en proceso hijo y poner que en el sizeof(numeros) en vez de:
+   1.1 Leer el pipe de escritura en proceso hijo y poner que en el sizeof(numeros) en vez de sizeof(int).
+   Codigo Bueno:
    ```
    if (pid == 0)
     {
@@ -19,4 +20,20 @@ Cosas interesantes y fallos cometidos.
    ```
    Al poner sizeof(numeros) me cogia el tamaño de bytes de n_aleatorios por estar definido como tamaño de array de la variable.
 
-   
+### Ejercio 2 de pract Junio.
+1. Fallos Cometidos.
+   1.1 Repartir el trabajo para cada proceso hijo.
+   Codigo Bueno:
+   ```
+   for (int c1 = n1; c1 < n2; c1++)
+   {
+      if (c1 % i == pid)
+      {
+         if(comprobarCapicua(c1))
+         {
+         printf("El numero %d es capicua pid= %d.\n", c1, getpid());
+         }
+      }
+   }
+   ```
+   El fallo cometido en la comprobacion del numero modulo n_procesos == pid, en vez de i que seria cada proceso.
