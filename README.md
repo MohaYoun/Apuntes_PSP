@@ -27,7 +27,7 @@ Cosas interesantes y fallos cometidos.
    ```
    for (int c1 = n1; c1 < n2; c1++)
    {
-      if (c1 % i == pid)
+      if (c1 % n_proc == i)
       {
          if(comprobarCapicua(c1))
          {
@@ -36,4 +36,5 @@ Cosas interesantes y fallos cometidos.
       }
    }
    ```
-   El fallo cometido en la comprobacion del numero modulo n_procesos == pid, en vez de i que seria cada proceso.
+   El fallo cometido en la comprobacion del numero modulo n_procesos == pid, en vez de i que seria cada proceso y otro fallo es este
+   if (c1 % i == pid).
